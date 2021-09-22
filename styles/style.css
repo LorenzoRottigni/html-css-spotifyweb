@@ -4,14 +4,12 @@
     box-sizing: border-box;
 }
 body{
-    position: relative;
+    display: flex;
     height: 100vh;
+    font-family: sans-serif;
+    position: relative;
 }
 header{
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
     width: 15%;
     background-color: #000;
     text-align: center;
@@ -21,7 +19,7 @@ header svg,
 header img{
     width: 35px;
 }
-header ul{
+ul{
     padding-top: 10px;
     list-style: none;
     color: white;
@@ -30,19 +28,54 @@ header ul li{
     padding: 5px 0;
 }
 main{
-    margin-left: 15%;
     display: flex;
     flex-direction: column;
+    background-color: #141922;
+    width: 100%;
 }
 main .upgrade-section{
     display: flex;
-    flex-grow: 1;
     justify-content: flex-end;
-    padding-right: 2px;
-    padding-top: 10px;
-    padding-bottom: 25px;
-    background-color: #1F1E27;
+    padding-right: 5px;
+    padding-top: 20px;
+    padding-bottom: 35px;
+    background-color: #080B12;
+}
+.upgrade-button{
+    padding: 10px 30px;
+    border: solid white 2px;
+    border-radius: 50px;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
 }
 main .main-section{
-    flex-grow: 10;
+    text-align: center;
+    padding: 0 10px;
+}
+main .main-section li{
+    display: inline-block;
+    padding: 15px 5px;
+    color: #7D7F84;
+    font-weight: bold;
+    font-size: 14px;
+    position: relative;
+}
+li.active:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 3px;
+    width: 50%;
+    background-color: #ADFF2F;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10vh;
+    background-color: #282828;
 }
