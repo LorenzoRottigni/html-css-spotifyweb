@@ -9,11 +9,26 @@ body{
     font-family: sans-serif;
     position: relative;
 }
+h1{
+    color: white;
+}
+h3{
+    color: white;
+    padding-top: 15px;
+}
+h4{
+    color: #707377;
+    padding: 10px 0;
+}
 header{
     width: 15%;
     background-color: #000;
     text-align: center;
     padding-top: 5px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 header svg,
 header img{
@@ -26,6 +41,19 @@ ul{
 }
 header ul li{
     padding: 5px 0;
+}
+header .user-profile{
+
+}
+header .user-profile i{
+    color: white;
+    padding-bottom: 30px;
+    
+}
+header .user-profile img{
+    border-radius: 50%;
+    background-color: grey;
+    margin-bottom: 10px;
 }
 main{
     display: flex;
@@ -50,8 +78,11 @@ main .upgrade-section{
     font-weight: bold;
 }
 main .main-section{
+    text-align: left;
+    padding: 0 20px;
+}
+main .main-section ul{
     text-align: center;
-    padding: 0 10px;
 }
 main .main-section li{
     display: inline-block;
@@ -70,6 +101,23 @@ li.active:after{
     height: 3px;
     width: 50%;
     background-color: #ADFF2F;
+}
+main .main-section .album-card-container{
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 600px;
+    padding-top: 30px;
+}
+main .main-section .album-card-container .album-card{
+    width: 49%;
+    height: fit-content;
+    text-align: center;
+}
+main .main-section .album-card-container .album-card img{
+    max-width: 100%;
 }
 footer{
     position: fixed;
