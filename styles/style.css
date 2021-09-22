@@ -10,6 +10,7 @@ body{
     position: relative;
 }
 h1{
+    padding-top: 30px;
     color: white;
 }
 h3{
@@ -20,71 +21,80 @@ h4{
     color: #707377;
     padding: 10px 0;
 }
-header{
-    width: 15%;
-    background-color: #000;
-    text-align: center;
-    padding-top: 5px;
-    max-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-header svg,
-header img{
-    width: 35px;
-}
-ul{
-    padding-top: 10px;
-    list-style: none;
-    color: white;
-}
-header ul li{
-    padding: 5px 0;
-}
-header .user-profile{
 
-}
-header .user-profile i{
-    color: white;
-    padding-bottom: 30px;
-    
-}
-header .user-profile img{
-    border-radius: 50%;
-    background-color: grey;
-    margin-bottom: 10px;
-}
-main{
-    display: flex;
-    flex-direction: column;
-    background-color: #141922;
-    width: 100%;
-}
-main .upgrade-section{
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 5px;
-    padding-top: 20px;
-    padding-bottom: 35px;
-    background-color: #080B12;
-}
 .upgrade-button{
-    padding: 10px 30px;
+    width: 200px;
+    height: 45px;
     border: solid white 2px;
     border-radius: 50px;
     background-color: transparent;
     color: white;
     font-weight: bold;
+    flex-shrink: 1;
+}
+
+
+main{
+    display: flex;
+    flex-direction: row;
+    background-color: #141922;
+    width: 100%;
+}
+
+main nav{
+    width: 100px;
+    background-color: black;
+    text-align: center;
+    padding-top: 5px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90vh;
+}
+main nav img,
+main nav svg{
+    max-width: 40px;
+}
+main nav .user-profile i{
+    color: white;
+    padding-bottom: 30px;
+    display: block;
+    font-size: 30px;
+}
+main nav .user-profile img{
+    border-radius: 50%;
+    background-color: grey;
+    margin-bottom: 10px;
 }
 main .main-section{
     text-align: left;
+    background-color: #141922;
     padding: 0 20px;
+    padding-top: 10vh;
+    max-width: 85%;
 }
-main .main-section ul{
+main  .main-section .upgrade-container{
+    display: flex;
+    justify-content: flex-end;
+    background-color: #080B12;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 10vh;
+    padding-top: 15px;
+    padding-right: 10px;
+}
+main .album-container{
+    width: 100%;
+    height: 80vh;
+    overflow: auto;
+}
+main .album-container ul{
     text-align: center;
 }
-main .main-section li{
+main .album-container li{
     display: inline-block;
     padding: 15px 5px;
     color: #7D7F84;
@@ -102,17 +112,29 @@ li.active:after{
     width: 50%;
     background-color: #ADFF2F;
 }
+ul{
+    padding-top: 10px;
+    list-style: none;
+    color: white;
+}
+ ul li{
+    padding: 5px 0;
+}
+
+
+
+
+
 main .main-section .album-card-container{
     display: flex;
     justify-content: space-between;
     align-content: flex-start;
     flex-wrap: wrap;
     width: 100%;
-    height: 600px;
     padding-top: 30px;
 }
 main .main-section .album-card-container .album-card{
-    width: 49%;
+    width: 48%;
     height: fit-content;
     text-align: center;
 }
@@ -126,4 +148,33 @@ footer{
     right: 0;
     height: 10vh;
     background-color: #282828;
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+footer i{
+    color: white;
+    font-size: 20px;
+}
+footer .song-info img{
+    width: 50px;
+    display: inline-block;
+}
+footer .song-info .song-description{
+    display: inline-block;
+}
+footer .icon-left-container i{
+    display: block;
+}
+footer .song-controller{
+    width: 200px;
+    height: 50px;
+    border: solid coral;
+}
+footer .volume-container{
+    width: 100px;
+    border: solid coral;
+    height: 50px;
 }
