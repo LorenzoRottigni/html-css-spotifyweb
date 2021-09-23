@@ -222,7 +222,6 @@ main nav .user-profile{
 main nav .user-profile div{
     display: flex;
     align-items: center;
-    justify-content: center;
     padding: 15px 0;
 }
 
@@ -380,6 +379,9 @@ footer .song-controller .song-controls{
 footer .song-controller .song-controls i{
     padding: 0 10px;
 }
+i[class="far fa-play-circle"]{
+    font-size: 35px;
+}
 footer .song-controller .song-bar-container{
     text-align: center;
     display: flex;
@@ -445,6 +447,9 @@ footer .volume-container .volume-bar{
         align-content: flex-start;
         overflow: auto;
     }
+    main .main-section .album-card-container .album-card{
+        width: calc(100%/4);
+    }
     main nav .user-profile div:nth-child(1){
         border-bottom: solid 2px #707377;
     }
@@ -456,12 +461,10 @@ footer .volume-container .volume-bar{
         vertical-align: middle;
         align-items: center;
     }
-    
-
 }
 @media screen and (min-width: 1200px) {
     main .main-section .album-card-container .album-card{
-        width: 200px;
+        width: calc(100%/7);
     }
 }
 @media screen and (max-width: 700px) {
