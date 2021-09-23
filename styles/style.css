@@ -187,6 +187,7 @@ main .album-container{
  
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.6); 
+    box-shadow:  inset 0 0 6px rgba(255,255,255,0.6);
     border-radius: 10px;
 }
  
@@ -246,6 +247,12 @@ main .main-section .album-card-container .album-card{
 }
 main .main-section .album-card-container .album-card img{
     max-width: 100%;
+}
+main .main-section .album-card-container:last-child img{
+    border-radius: 50%;
+}
+main .main-section h4{
+    margin-left: 15px;
 }
 footer{
     position: fixed;
@@ -376,6 +383,7 @@ footer .volume-container .volume-bar{
     img[src="images/logo.svg"]{
         display: inline-block;
         max-width: 200px;
+        height: 100px;
     }
     main nav{
         min-width: 30%;
@@ -392,6 +400,11 @@ footer .volume-container .volume-bar{
         display: inline-block;
     }
 
+}
+@media screen and (min-width: 1200px) {
+    main .main-section .album-card-container .album-card{
+        width: 200px;
+    }
 }
 @media screen and (max-width: 700px) {
     footer .volume-container .song-bar{
