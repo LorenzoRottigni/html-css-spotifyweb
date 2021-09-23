@@ -159,7 +159,7 @@ main .main-section{
     text-align: left;
     background-color: #141922;
     padding: 0 0;
-    padding-top: 10vh;
+    margin-top: 100px;
     width: 100%;
 }
 main  .main-section .upgrade-container{
@@ -170,9 +170,11 @@ main  .main-section .upgrade-container{
     right: 0;
     top: 0;
     width: 100%;
-    min-height: 10vh;
+    min-height: 100px;
+    max-height: 100px;
     padding-top: 15px;
     padding-right: 10px;
+    z-index: 1;
 }
 main .album-container{
     width: 100%;
@@ -195,6 +197,7 @@ main .album-container{
 main .album-container ul{
     text-align: center;
     padding: 10px;
+    min-height: 100px;
 }
 main .album-container li{
     display: inline-block;
