@@ -50,7 +50,7 @@ main nav{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 90vh;
+    height: 85vh;
 }
 main nav img,
 main nav svg{
@@ -82,7 +82,7 @@ main  .main-section .upgrade-container{
     right: 0;
     top: 0;
     width: 100%;
-    height: 10vh;
+    min-height: 10vh;
     padding-top: 15px;
     padding-right: 10px;
 }
@@ -146,35 +146,108 @@ footer{
     bottom: 0;
     left: 0;
     right: 0;
-    height: 10vh;
+    height: 15vh;
     background-color: #282828;
     z-index: 3;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    min-width: 700px;
+}
+footer div{
+    display: flex;
+}
+footer h4{
+    color: white;
+    padding-top: 0;
+    padding-bottom: 5px;
+}
+footer h5{
+    color: #707377;
+}
+footer p{
+    color: white;
 }
 footer i{
     color: white;
-    font-size: 20px;
+    font-size: 1.3em;
+}
+footer .song-info{
+    display: flex;
+    align-items: center;
 }
 footer .song-info img{
-    width: 50px;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
     display: inline-block;
 }
+
 footer .song-info .song-description{
     display: inline-block;
 }
 footer .icon-left-container i{
     display: block;
+    padding: 0 30px;
+    color: #707377;
 }
 footer .song-controller{
-    width: 200px;
-    height: 50px;
-    border: solid coral;
+    flex-grow: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+footer .song-controller .song-controls{
+    flex-grow: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .song-controller .song-controls i{
+    font-size: 25px;
+    padding: 0 10px
+}
+footer .song-controller .song-bar-container{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+}
+.song-bar{
+    height: 10px;
+    background-color: #707377;
+    border-radius: 10px;
+    flex-grow: 1;
+    margin: 0 10px;
+    position: relative;
+    min-width: 70px;
+}
+.song-bar::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    background-color: lightgray;
+    border-radius: 10px;
+}
+footer .icon-right-container{
+    padding: 0 30px;
+    display: flex;
+    gap: 15px
 }
 footer .volume-container{
-    width: 100px;
-    border: solid coral;
-    height: 50px;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+footer .volume-container .volume-bar{
+    flex-grow: 2;
+    
 }
