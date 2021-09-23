@@ -288,15 +288,6 @@ main .album-container{
     border-radius: 10px;
     background-color: #ADFF2F;
 }
-
-
-
-
-
-
-
-
-
 main .main-section .album-card-container{
     display: flex;
     align-content: flex-start;
