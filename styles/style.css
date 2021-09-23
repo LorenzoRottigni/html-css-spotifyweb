@@ -3,26 +3,55 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body{
     display: flex;
     height: 100vh;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     position: relative;
 }
+
+/******************************/
+/* TITLES */
+/******************************/
+
 h1{
     padding-top: 30px;
     color: white;
     padding-left: 20px;
 }
-h3{
+
+h2{
     color: white;
-    padding-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+
 }
+
+h3{
+    color: #707377;
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
 h4{
     color: #707377;
-    padding: 10px 0;
+    padding: 7px 0;
     font-size: 14px;
+    font-weight: 550;
 }
+
+h5{
+    color: #707377;
+    font-size: 14px;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+/******************************/
+/* BUTTONS */
+/******************************/
 
 .upgrade-button{
     width: 200px;
@@ -32,51 +61,58 @@ h4{
     background-color: transparent;
     color: white;
     font-weight: bold;
-    flex-shrink: 1;
 }
 
+/******************************/
+/* UNORDERED LISTS */
+/******************************/
 
-main{
-    display: flex;
-    flex-direction: row;
-    background-color: #141922;
-    width: 100%;
+/* navbar ul */
+ul{
+    padding-top: 15px;
+    list-style: none;
+    color: white;
 }
 
-main nav{
-    background-color: black;
+/* long ul */
+main .album-container ul{
     text-align: center;
-    padding: 5px 15px;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: calc(100vh -    100px);
-    position: relative;
-}
-main nav .icon-list img{
-    max-width: 40px;
-    /*max-width: 35%;*/
-    display: inline-block;
-    margin: 0 auto;
-}
-img[src="images/logo-small.svg"]{
-    max-width: 50px;
-    margin: 0 auto;
-}
-img[src="images/logo.svg"]{
-    display: none;
+    padding: 10px;
+    min-height: 100px;
 }
 
-main nav span{
-    display: none;
-    width: 65%
-}
+/******************************/
+/* LIST ITEMS */
+/******************************/
+
 main nav li{
     display: flex;
     text-align: left;
     position: relative;
 }
+
+/* Home Search Library li */
+main nav .icon-list li{
+    padding: 0 10px;
+}
+
+/* playlist li */
+main nav .playlist-container li{
+    color: #707377;
+    min-width: 100px;
+}
+
+/* Podcast, Ranks, Mood ...*/
+main .album-container li{
+    display: inline-block;
+    padding: 15px 5px;
+    color: #7D7F84;
+    font-weight: bold;
+    font-size: 14px;
+    position: relative;
+}
+
+/*yellow active effect*/
 main nav li:hover:after,
 .vertical-active:after{
     content: "";
@@ -85,47 +121,108 @@ main nav li:hover:after,
     top: 0;
     bottom: 0;
     width: 3px;
-    margin-left: -8px;
     background-color: #ADFF2F;
 }
+
+.vertical-active *{
+    color: white;
+    font-weight: bold;
+}
+
+li.active:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 3px;
+    width: 50%;
+    background-color: #ADFF2F;
+}
+
+/******************************/
+/* MAIN */
+/******************************/
+
+main{
+    display: flex;
+    flex-direction: row;
+    background-color: #141922;
+    width: 100%;
+}
+
+/******************************/
+/* MAIN SIDE NAV */
+/******************************/
+
+main nav{
+    background-color: black;
+    text-align: center;
+    padding: 5px 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: calc(100vh - 100px);
+    position: relative;
+}
+main nav .icon-list img{
+    width: 60px;
+    padding: 0 10px;
+    /*max-width: 35%;*/
+    display: inline-block;
+}
+img[src="images/logo-small.svg"]{
+    max-width: 50px;
+    margin: 0 auto;
+    margin: 0 20px;
+}
+img[src="images/logo.svg"]{
+    display: none;
+    margin: 0 20px;
+}
+
+main nav span{
+    display: none;
+}
+
 main nav .playlist-container{
     display: none;
     text-align: left;
+    padding-left: 20px;
+}
+main nav .playlist-container h2{
+    padding-top: 15px;
 }
 main nav .playlist-container span{
     font-size: 30px;
     width: 30px;
     line-height: 30px;
-    background-color: lightgray;
+    background-color: #707377;
     justify-self: flex-end;
     text-align: center;
     margin-right: 10px;
     color: black
 }
-main nav .playlist-container li{
-    color: #707377;
-    font-weight: bold;
-    min-width: 100px;
-}
+
 main nav .playlist-container h5{
     color: #707377;
-    line-height: 30px;
+    margin-bottom: 15px;
     display: flex;
     margin-top: 10px
 }
-main nav .playlist-container h4{
-    color: #707377;
-    width: 100%;
-}
+
 main nav .user-profile{
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    padding: 0 20px;
 }
 main nav .user-profile div{
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 15px 0;
 }
 
@@ -139,7 +236,7 @@ main nav .user-profile span{
 main nav .user-profile i{
     color: #707377;
     display: inline-block;
-    font-size: 30px;
+    font-size: 20px;
     vertical-align: middle;
 }
 main nav .user-profile img{
@@ -149,11 +246,6 @@ main nav .user-profile img{
     height: 30px;
     display: inline-block;
     vertical-align: middle;
-}
-main nav .user-profile h4{
-    color: white;
-    font-weight: bold;
-    display: inline-block;
 }
 main .main-section{
     text-align: left;
@@ -179,6 +271,7 @@ main  .main-section .upgrade-container{
 main .album-container{
     width: 100%;
     height: 100%;
+    padding-bottom: 400px;
     overflow-y: scroll;
 }
 ::-webkit-scrollbar {
@@ -195,37 +288,10 @@ main .album-container{
     border-radius: 10px;
     background-color: #ADFF2F;
 }
-main .album-container ul{
-    text-align: center;
-    padding: 10px;
-    min-height: 100px;
-}
-main .album-container li{
-    display: inline-block;
-    padding: 15px 5px;
-    color: #7D7F84;
-    font-weight: bold;
-    font-size: 14px;
-    position: relative;
-}
-li.active:after{
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 3px;
-    width: 50%;
-    background-color: #ADFF2F;
-}
-ul{
-    padding-top: 15px;
-    list-style: none;
-    color: white;
-}
- ul li{
-    padding: 2px 0;
-}
+
+
+
+
 
 
 
@@ -251,9 +317,6 @@ main .main-section .album-card-container .album-card img{
 main .main-section .album-card-container:last-child img{
     border-radius: 50%;
 }
-main .main-section h4{
-    margin-left: 15px;
-}
 footer{
     position: fixed;
     bottom: 0;
@@ -272,14 +335,13 @@ footer div{
     display: flex;
 }
 footer h4{
-    color: white;
-    padding-top: 0;
-    font-size: 14px;
-    padding-bottom: 5px;
+    padding: 0;
+    color: white
 }
 footer h5{
     color: #707377;
     font-size: 12px;
+    padding: 0;
 }
 footer p{
     color: white;
@@ -305,6 +367,7 @@ footer .song-info .song-description{
 footer .icon-left-container{
     display: flex;
     flex-direction: column;
+    max-height: 40px
 }
 footer .icon-left-container i{
     display: block;
@@ -324,14 +387,12 @@ footer .song-controller .song-controls{
     align-items: center;
 }
 footer .song-controller .song-controls i{
-    font-size: 20px;
     padding: 0 10px;
 }
 footer .song-controller .song-bar-container{
-    width: 100%;
     text-align: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-grow: 1;
 }
@@ -342,7 +403,8 @@ footer .song-controller .song-bar-container{
     flex-grow: 1;
     margin: 0 10px;
     position: relative;
-    min-width: 40px;
+    min-width: 100px;
+    max-width: 250px;
 }
 .song-bar::after{
     content: "";
@@ -375,23 +437,22 @@ footer .volume-container .volume-bar{
         display: inline-block;
     }
     main nav .playlist-container{
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
     img[src="images/logo-small.svg"]{
         display: none;
     }
     img[src="images/logo.svg"]{
         display: inline-block;
-        max-width: 200px;
+        max-width: 150px;
         height: 100px;
     }
     main nav{
-        min-width: 30%;
+        min-width: 250px;
         align-content: flex-start;
         overflow: auto;
-    }
-    main nav .icon-list li{
-        max-width: 150px;
     }
     main nav .user-profile div:nth-child(1){
         border-bottom: solid 2px #707377;
@@ -399,6 +460,12 @@ footer .volume-container .volume-bar{
     main nav .user-profile span{
         display: inline-block;
     }
+    footer .icon-left-container {
+        flex-direction: row;
+        vertical-align: middle;
+        align-items: center;
+    }
+    
 
 }
 @media screen and (min-width: 1200px) {
@@ -409,5 +476,16 @@ footer .volume-container .volume-bar{
 @media screen and (max-width: 700px) {
     footer .volume-container .song-bar{
         display: none;
+    }
+    footer .icon-right-container{
+        flex-direction: column;
+        gap: 5px;
+        padding-right: 15px;
+    }
+    main .main-section .album-card-container .album-card{
+        width: 45%;
+    }
+    main nav .icon-list li{
+        padding: 10px 0;
     }
 }
