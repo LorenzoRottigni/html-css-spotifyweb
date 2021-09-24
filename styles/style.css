@@ -1,3 +1,16 @@
+@keyframes vertical-active {
+
+    0%{
+        transform: rotate(0);
+        width: 3px
+    }
+
+    100%{
+        transform: rotate(180deg);
+        width: 3px
+    }
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -9,6 +22,60 @@ body{
     height: 100vh;
     font-family: 'Roboto', sans-serif;
     position: relative;
+}
+
+/******************************/
+/* UTILITY */
+/******************************/
+
+.super-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    color: white;
+    visibility: hidden;
+    z-index: 2;
+}
+
+.img-container{
+    position: relative;
+    max-width: fit-content;
+}
+
+/******************************/
+/* FONT-AWESOME */
+/******************************/
+
+i[class="far fa-play-circle"]{
+    font-size: 100px;
+}
+
+i[class="far fa-play-circle"]{
+    font-size: 35px;
+}
+
+i[class="far fa-play-circle"]:hover{
+    transform: scale(120%);
+}
+
+/******************************/
+/* SCROLLBAR */
+/******************************/
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.6); 
+    box-shadow:  inset 0 0 6px rgba(255,255,255,0.6);
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #ADFF2F;
 }
 
 /******************************/
@@ -63,6 +130,7 @@ h5{
     color: white;
     font-weight: bold;
 }
+
 .upgrade-button:hover{
     transform: scale(110%);
 }
@@ -118,6 +186,7 @@ main .album-container li{
 }
 
 /*yellow active effect*/
+
 main nav .icon-list li:hover:after,
 .vertical-active:after{
     content: "";
@@ -129,16 +198,6 @@ main nav .icon-list li:hover:after,
     background-color: #ADFF2F;
     animation: vertical-active 0.5s linear;
 }
-@keyframes vertical-active {
-    0%{
-        transform: rotate(0);
-        width: 3px
-    }
-    100%{
-        transform: rotate(180deg);
-        width: 3px
-    }
-}
 
 main nav li:hover h4{
     color: white;
@@ -148,6 +207,7 @@ main nav li:hover h4{
     color: white;
     font-weight: bold;
 }
+
 main .album-container li:hover::after,
 li.active:after{
     content: "";
@@ -159,9 +219,11 @@ li.active:after{
     width: 50%;
     background-color: #ADFF2F;
 }
+
 main .album-container li:hover{
     color: white
 }
+
 /******************************/
 /* MAIN */
 /******************************/
@@ -198,6 +260,7 @@ main nav .icon-list img{
     display: inline-block;
     opacity: 60%;
 }
+
 main nav .icon-list li:hover img{
     opacity: 100%;
 }
@@ -303,6 +366,8 @@ main nav .user-profile img{
     object-position: center;
 }
 
+/* effects */
+
 main nav .user-profile div:hover span{
     color: white
 }
@@ -317,6 +382,11 @@ main nav .user-profile div:nth-child(2):hover img{
     transform: scale(140%)
     
 }
+
+/******************************/
+/* MAIN SECTION */
+/******************************/
+
 main .main-section{
     text-align: left;
     background-color: #141922;
@@ -324,6 +394,7 @@ main .main-section{
     margin-top: 100px;
     width: 100%;
 }
+
 main  .main-section .upgrade-container{
     display: flex;
     justify-content: flex-end;
@@ -338,29 +409,22 @@ main  .main-section .upgrade-container{
     padding-right: 10px;
     z-index: 1;
 }
+
+/* Scroll bar */
+
 main .main-container{
     overflow-y: scroll;
     max-height: 80vh;
 }
+
 main .album-container{
     width: 100%;
     height: 100%;
     padding-bottom: 400px;
 }
-::-webkit-scrollbar {
-    width: 8px;
-}
- 
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.6); 
-    box-shadow:  inset 0 0 6px rgba(255,255,255,0.6);
-    border-radius: 10px;
-}
- 
-::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: #ADFF2F;
-}
+
+/* albums row */
+
 main .main-section .album-card-container{
     display: flex;
     align-content: flex-start;
@@ -370,39 +434,33 @@ main .main-section .album-card-container{
     padding-left: 20px;
     gap: 25px
 }
+
+/* album single card */
+
 main .main-section .album-card-container .album-card{
     width: 120px;
     height: fit-content;
     text-align: center;
     position: relative;
 }
+
 main .album-card h2{
     padding-top: 15px;
 }
+
+/* underline hover albums */
+
 main .main-section .album-card-container .album-card:hover h2,
 main .main-section .album-card-container .album-card:hover h4{
     text-decoration: underline;
 }
 
-.super-center{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform:translate(-50%, -50%);
-    color: white;
-    visibility: hidden;
-    z-index: 2;
-}
-div.album-card .img-container{
-    position: relative;
-    max-width: fit-content;
-}
-i[class="far fa-play-circle"]{
-    font-size: 100px;
-}
+/* album animations */
+
 div.album-card > div.img-container:hover .super-center{
     visibility: visible;
 }
+
 div.album-card > div.img-container:hover::after{
     content: '\f16c';
     position: absolute;
@@ -412,6 +470,7 @@ div.album-card > div.img-container:hover::after{
     bottom: 0;
     background-color: rgba(0,0,0,0.6);
 }
+
 div.border-radius div.img-container:hover::after{
     content: '\f16c';
     position: absolute;
@@ -423,12 +482,23 @@ div.border-radius div.img-container:hover::after{
     border-radius: 50%;
 
 }
+
+/* album cover */
+
 main .main-section .album-card-container .album-card img{
     max-width: 100%;
 }
+
+/* artist cover */
+
 main .main-section .border-radius img{
     border-radius: 50%;
 }
+
+/******************************/
+/* FOOTER */
+/******************************/
+
 footer{
     position: fixed;
     bottom: 0;
@@ -443,33 +513,47 @@ footer{
     justify-content: space-between;
     padding: 20px 10px;
 }
+
 footer div{
     display: flex;
 }
+
+/* footer titles */
+
 footer h4{
     padding: 0;
     color: white
 }
+
 footer h5{
     color: #707377;
     font-size: 12px;
     padding: 0;
 }
+
 footer p{
     color: white;
 }
+
 footer i{
     color: white;
     font-size: 20px;
 }
+
+/* left song informations section */
+
 footer .song-info{
     display: flex;
     align-items: center;
 }
+
 footer .song-info h5:hover{
     color: white;
     text-decoration: underline;
 }
+
+/* song image */
+
 footer .song-info img{
     width: 40px;
     height: 40px;
@@ -480,6 +564,9 @@ footer .song-info img{
 footer .song-info .song-description{
     display: inline-block;
 }
+
+/* love - folder icons container */
+
 footer .icon-left-container{
     display: flex;
     flex-direction: column;
@@ -493,12 +580,18 @@ footer .icon-left-container i{
 footer .icon-left-container i:hover{
     color: white
 }
+
+/* footer central section */
+
 footer .song-controller{
     flex-grow: 3;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
+
+/* footer central top section */
+
 footer .song-controller .song-controls{
     flex-grow: 2;
     display: flex;
@@ -508,12 +601,9 @@ footer .song-controller .song-controls{
 footer .song-controller .song-controls i{
     padding: 0 10px;
 }
-i[class="far fa-play-circle"]{
-    font-size: 35px;
-}
-i[class="far fa-play-circle"]:hover{
-    transform: scale(120%);
-}
+
+/* footer central bottom section */
+
 footer .song-controller .song-bar-container{
     text-align: center;
     display: flex;
@@ -521,6 +611,9 @@ footer .song-controller .song-bar-container{
     align-items: center;
     flex-grow: 1;
 }
+
+/* song and volume lime bar */
+
 .song-bar{
     height: 5px;
     background-color: #707377;
@@ -531,6 +624,7 @@ footer .song-controller .song-bar-container{
     min-width: 100px;
     max-width: 250px;
 }
+
 .song-bar::after{
     content: "";
     display: inline-block;
@@ -542,6 +636,7 @@ footer .song-controller .song-bar-container{
     background-color: lightgray;
     border-radius: 10px;
 }
+
 .song-bar-container:hover .song-bar::after,
 .volume-container:hover .song-bar::after{
     content: "";
@@ -553,6 +648,9 @@ footer .song-controller .song-bar-container{
     width: 30%;
     border-radius: 10px;
 }
+
+/* song bar dragger in hover */
+
 .cursor-drag{
     position: absolute;
     left: 30%;
@@ -569,11 +667,16 @@ footer .song-controller .song-bar-container{
 .volume-container:hover .cursor-drag{
     visibility: visible;
 }
+
+/* List - Desktop icons right container */
+
 footer .icon-right-container{
     padding: 0 10px;
     display: flex;
     gap: 15px
 }
+
+/* right volume bar container */
 footer .volume-container{
     display: flex;
     flex-grow: 1;
@@ -583,6 +686,47 @@ footer .volume-container .volume-bar{
     flex-grow: 2;
     
 }
+
+/******************************/
+/* MEDIA QUERY */
+/******************************/
+
+/* less then 700 px */
+
+@media screen and (max-width: 700px) {
+    footer .volume-container .song-bar{
+        display: none;
+    }
+    footer .icon-right-container{
+        flex-direction: column;
+        gap: 5px;
+        padding-right: 15px;
+    }
+    main .main-section .album-card-container .album-card{
+        width: 45%;
+    }
+    nav .user-profile div{
+        justify-content: center;
+    }
+    i[class="fas fa-volume-up"]{
+        position: relative;
+    }
+    i[class="fas fa-volume-up"]:hover::after{
+        content: "30%";
+        position: absolute;
+        top: -50px;
+        padding: 10px 10px;
+        font-size: 12px;
+        color: black;
+        background-color: rgba(255,255,255,0.5);
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 15px;
+
+    }
+}
+
+/* more then 700 px */
 
 @media screen and (min-width: 700px) {
     main nav span{
@@ -621,40 +765,12 @@ footer .volume-container .volume-bar{
         align-items: center;
     }
 }
+
+/* more then 1200 px */
+
 @media screen and (min-width: 1200px) {
     main .main-section .album-card-container .album-card{
         width: calc(100%/7);
     }
 }
-@media screen and (max-width: 700px) {
-    footer .volume-container .song-bar{
-        display: none;
-    }
-    footer .icon-right-container{
-        flex-direction: column;
-        gap: 5px;
-        padding-right: 15px;
-    }
-    main .main-section .album-card-container .album-card{
-        width: 45%;
-    }
-    nav .user-profile div{
-        justify-content: center;
-    }
-    i[class="fas fa-volume-up"]{
-        position: relative;
-    }
-    i[class="fas fa-volume-up"]:hover::after{
-        content: "30%";
-        position: absolute;
-        top: -50px;
-        padding: 10px 10px;
-        font-size: 12px;
-        color: black;
-        background-color: rgba(255,255,255,0.5);
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 15px;
 
-    }
-}
