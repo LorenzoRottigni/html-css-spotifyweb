@@ -380,7 +380,6 @@ main nav .user-profile div:hover i{
 main nav .user-profile div:nth-child(2):hover img{
     border-radius: 0;
     transform: scale(140%)
-    
 }
 
 /******************************/
@@ -410,17 +409,18 @@ main  .main-section .upgrade-container{
     z-index: 1;
 }
 
+main .album-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 /* Scroll bar */
 
 main .main-container{
     overflow-y: scroll;
-    max-height: 80vh;
-}
-
-main .album-container{
-    width: 100%;
-    height: 100%;
-    padding-bottom: 400px;
+    flex-grow: 1;
 }
 
 /* albums row */
@@ -493,6 +493,10 @@ main .main-section .album-card-container .album-card img{
 
 main .main-section .border-radius img{
     border-radius: 50%;
+}
+
+main .main-section .border-radius{
+    padding-bottom: 300px;
 }
 
 /******************************/
@@ -572,11 +576,13 @@ footer .icon-left-container{
     flex-direction: column;
     max-height: 40px
 }
+
 footer .icon-left-container i{
     display: block;
     padding: 0 10px;
     color: #707377;
 }
+
 footer .icon-left-container i:hover{
     color: white
 }
@@ -663,6 +669,7 @@ footer .song-controller .song-bar-container{
     visibility: hidden;
     z-index: 3;
 }
+
 .song-bar-container:hover .cursor-drag,
 .volume-container:hover .cursor-drag{
     visibility: visible;
@@ -677,11 +684,13 @@ footer .icon-right-container{
 }
 
 /* right volume bar container */
+
 footer .volume-container{
     display: flex;
     flex-grow: 1;
     align-items: center;
 }
+
 footer .volume-container .volume-bar{
     flex-grow: 2;
     
