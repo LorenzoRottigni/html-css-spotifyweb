@@ -606,7 +606,7 @@ footer .volume-container .volume-bar{
     main .main-section .album-card-container .album-card{
         width: 45%;
     }
-    main nav .icon-list li{
-        padding: 10px 0;
+    nav .user-profile div{
+        justify-content: center;
     }
 }
