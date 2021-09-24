@@ -62,6 +62,9 @@ h5{
     color: white;
     font-weight: bold;
 }
+.upgrade-button:hover{
+    transform: scale(110%);
+}
 
 /******************************/
 /* UNORDERED LISTS */
@@ -113,7 +116,7 @@ main .album-container li{
 }
 
 /*yellow active effect*/
-main nav li:hover:after,
+main nav .icon-list li:hover:after,
 .vertical-active:after{
     content: "";
     position: absolute;
@@ -122,13 +125,28 @@ main nav li:hover:after,
     bottom: 0;
     width: 3px;
     background-color: #ADFF2F;
+    animation: vertical-active 0.5s linear;
+}
+@keyframes vertical-active {
+    0%{
+        transform: rotate(0);
+        width: 3px
+    }
+    100%{
+        transform: rotate(180deg);
+        width: 3px
+    }
+}
+
+main nav h4:hover{
+    color: white;
 }
 
 .vertical-active *{
     color: white;
     font-weight: bold;
 }
-
+main .album-container li:hover::after,
 li.active:after{
     content: "";
     position: absolute;
@@ -139,7 +157,9 @@ li.active:after{
     width: 50%;
     background-color: #ADFF2F;
 }
-
+main .album-container li:hover{
+    color: white
+}
 /******************************/
 /* MAIN */
 /******************************/
@@ -300,6 +320,34 @@ main .main-section .album-card-container .album-card{
     width: 120px;
     height: fit-content;
     text-align: center;
+    position: relative;
+}
+.super-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    color: white;
+    visibility: hidden;
+    
+}
+div.album-card .img-container{
+    position: relative;
+}
+i[class="far fa-play-circle"]{
+    font-size: 100px;
+}
+div.album-card > div.img-container:hover .super-center{
+    visibility: visible;
+}
+div.album-card > div.img-container:hover::after{
+    content: '\f16c';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.3);
 }
 main .main-section .album-card-container .album-card img{
     max-width: 100%;
