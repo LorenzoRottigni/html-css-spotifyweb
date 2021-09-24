@@ -19,6 +19,7 @@ h1{
     padding-top: 30px;
     color: white;
     padding-left: 20px;
+    width: 100%;
 }
 
 h2{
@@ -138,7 +139,7 @@ main nav .icon-list li:hover:after,
     }
 }
 
-main nav h4:hover{
+main nav li:hover h4{
     color: white;
 }
 
@@ -191,7 +192,11 @@ main nav .icon-list img{
     padding: 0 10px;
     /*max-width: 35%;*/
     display: inline-block;
+    opacity: 60%;
 }
+main nav .icon-list li:hover img{
+    opacity: 100%;
+} 
 img[src="images/logo-small.svg"]{
     max-width: 50px;
     margin: 0 auto;
@@ -231,7 +236,12 @@ main nav .playlist-container h5{
     display: flex;
     margin-top: 10px
 }
-
+main nav .playlist-container:hover span{
+    background-color: white;
+}
+main nav .playlist-container:hover h3{
+    color: white;
+}
 main nav .user-profile{
     flex-grow: 1;
     display: flex;
@@ -257,6 +267,7 @@ main nav .user-profile i{
     display: inline-block;
     font-size: 20px;
     vertical-align: middle;
+    transition: 0.5s;
 }
 main nav .user-profile img{
     border-radius: 50%;
@@ -265,6 +276,21 @@ main nav .user-profile img{
     height: 30px;
     display: inline-block;
     vertical-align: middle;
+    transition: 0.5s;
+    object-fit: cover;
+    object-position: center;
+}
+main nav .user-profile div:hover span{
+    color: white
+}
+main nav .user-profile div:hover i{
+    color: #ADFF2F;
+    transform: scale(150%) rotate(360deg) ;
+}
+main nav .user-profile div:nth-child(2):hover img{
+    border-radius: 0;
+    transform: scale(140%)
+    
 }
 main .main-section{
     text-align: left;
@@ -322,6 +348,11 @@ main .main-section .album-card-container .album-card{
     text-align: center;
     position: relative;
 }
+main .main-section .album-card-container .album-card:hover h2,
+main .main-section .album-card-container .album-card:hover h4{
+    text-decoration: underline;
+}
+
 .super-center{
     position: absolute;
     top: 50%;
@@ -329,7 +360,7 @@ main .main-section .album-card-container .album-card{
     transform:translate(-50%, -50%);
     color: white;
     visibility: hidden;
-    
+    z-index: 2;
 }
 div.album-card .img-container{
     position: relative;
@@ -347,12 +378,23 @@ div.album-card > div.img-container:hover::after{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.6);
+}
+div.border-radius div.img-container:hover::after{
+    content: '\f16c';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 50%;
+
 }
 main .main-section .album-card-container .album-card img{
     max-width: 100%;
 }
-main .main-section .album-card-container:last-child img{
+main .main-section .border-radius img{
     border-radius: 50%;
 }
 footer{
@@ -392,6 +434,10 @@ footer .song-info{
     display: flex;
     align-items: center;
 }
+footer .song-info h5:hover{
+    color: white;
+    text-decoration: underline;
+}
 footer .song-info img{
     width: 40px;
     height: 40px;
@@ -412,6 +458,9 @@ footer .icon-left-container i{
     padding: 0 10px;
     color: #707377;
 }
+footer .icon-left-container i:hover{
+    color: white
+}
 footer .song-controller{
     flex-grow: 3;
     height: 100%;
@@ -429,6 +478,9 @@ footer .song-controller .song-controls i{
 }
 i[class="far fa-play-circle"]{
     font-size: 35px;
+}
+i[class="far fa-play-circle"]:hover{
+    transform: scale(120%);
 }
 footer .song-controller .song-bar-container{
     text-align: center;
@@ -457,6 +509,33 @@ footer .song-controller .song-bar-container{
     width: 30%;
     background-color: lightgray;
     border-radius: 10px;
+}
+.song-bar-container:hover .song-bar::after,
+.volume-container:hover .song-bar::after{
+    content: "";
+    background-color: #ADFF2F;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    border-radius: 10px;
+}
+.cursor-drag{
+    position: absolute;
+    left: 30%;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    z-index: 3;
+}
+.song-bar-container:hover .cursor-drag,
+.volume-container:hover .cursor-drag{
+    visibility: visible;
 }
 footer .icon-right-container{
     padding: 0 10px;
